@@ -1,0 +1,27 @@
+{
+    "compilerOptions": {
+      "target": "ES2020",
+      "useDefineForClassFields": true,
+      "lib": ["ES2020", "DOM", "DOM.Iterable"],
+      "module": "ESNext",
+      "skipLibCheck": true,
+      "moduleResolution": "bundler",         // 或 "node16"/"nodeNext"
+      "allowSyntheticDefaultImports": true, // 与 esModuleInterop 配合更稳
+      "esModuleInterop": true,              // 允许默认导入 CommonJS 模块
+      "resolveJsonModule": true,
+      "isolatedModules": true,
+      "noEmit": true,
+      "jsx": "react-jsx",
+    
+      "baseUrl": ".",
+      "paths": {
+        "@/*": ["src/*"]
+      },
+      "typeRoots": [
+      "./node_modules/@types",
+      "./src/types"
+      ],
+    },
+    "include": ["src", "vite.config.ts", "src/**/*.d.ts"],
+    "types": ["node"]
+  }
