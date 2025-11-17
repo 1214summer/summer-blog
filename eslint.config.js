@@ -40,6 +40,9 @@ export default defineConfig([
       // 可按需加严的通用规则
       'no-unused-vars': 'warn',
       'no-undef': 'error',
+      indent: ['error', 2],
+      'no-tabs': 'error',
+      '@typescript-eslint/indent': ['error', 2]
     },
   },
 ])

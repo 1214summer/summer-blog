@@ -1,45 +1,50 @@
-import {Link} from 'react-router-dom';
-import {useAppRoutes} from '@/router/index'
-import { Suspense } from 'react';
-import { useAppSelector, useAppDispatch, shallowEqualApp} from '@/store/index'
-import { changeMessageAction } from './store/modules/counter';
-import ErrorBoundary from '@/components/common/ErrorBoundary';
-import styles from './App.module.scss'
+import { ReactNode, FC } from 'react';
+import styles from './App.module.scss';
 
-const App: React.FC = () => {
-  const dispatch = useAppDispatch()
+import { useLocalStorageState, useMount } from 'ahooks';
 
-  const {count, message} = useAppSelector(
+import Footer from '@/components/layout/Footer';
+import Main from '@/components/layout/Main';
+import Nav from '@/components/layout/Nav';
+import BackToTop from '@/components/layout/BackToTop';
+
+import classNames from 'classnames';
+import { useAppSelector, useAppDispatch, shallowEqualApp } from '@/store';
+import {changeModeAction} from "@/store/modules/mode"
+interface IProps {
+  children?: ReactNode;
+}
+
+const App: FC<IProps> = () => {
+  // 从 Redux 获取 mode
+  const {modeIndex} = useAppSelector(
     (state) => ({
-      count: state.counter.count,
-      message: state.counter.message
+      modeIndex: state.mode.modeIndex
     }),
     shallowEqualApp
   )
+  const dispatch = useAppDispatch();
+  
+  const bgClass = [styles.bg0, styles.bg1, styles.bg2];
+  const [localMode] = useLocalStorageState('localMode');
 
-  function handleClick(){
-    dispatch(changeMessageAction("哈哈哈"))
-  }
+  // 组件挂载时，如果有本地存储的 mode，则设置到 Redux
+  useMount(() => {
+    if (localMode !== undefined) {
+      dispatch(changeModeAction(localMode));
+    }
+  });
+  
 
-  return(
-    <div id="App">
-      <div className={styles.App}>
-        <Link to="/discover">发现</Link>
-      </div>
-      <div>
-        {message}
-        {count}
-      </div>
-      <button onClick={handleClick}>change</button>
-      <ErrorBoundary>
-      <Suspense fallback="">
-        <div className="main">
-          {useAppRoutes()}
-        </div>
-      </Suspense>
-      </ErrorBoundary>
+  return (
+    <div className={classNames(styles.App, bgClass[modeIndex])}>
+      <Nav />
+      <Main />
+      <Footer />
+      <BackToTop />
     </div>
-  )
-}
+  );
+};
 
-export default App
+export default App;
+

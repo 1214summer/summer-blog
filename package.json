@@ -28,11 +28,13 @@
     }
   },
   "dependencies": {
+    "@ant-design/icons": "^6.1.0",
     "@arco-design/web-react": "^2.66.8",
     "@babel/runtime": "^7.28.4",
     "@reduxjs/toolkit": "^2.10.1",
     "@types/marked": "^5.0.2",
     "ahooks": "^3.9.6",
+    "antd": "^5.28.1",
     "classnames": "^2.5.1",
     "corejs": "^1.0.0",
     "normalize.css": "^8.0.1",

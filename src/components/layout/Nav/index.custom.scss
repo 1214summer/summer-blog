@@ -1,0 +1,32 @@
+@use '@/styles/base.scss' as base;
+@use '@/styles/style.scss' as style;
+
+.mobile-nav-box {
+  display: none;
+
+  .ant-drawer-content-wrapper {
+    width: 90rem !important;
+
+    .ant-drawer-header-close-only {
+      display: none;
+    }
+
+    .ant-drawer-content {
+      background-color: base.$themeColor;
+      color: base.$textColor;
+
+      .ant-drawer-body {
+        padding: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 1240px) {
+  .mobile-nav-box {
+    display: block;
+  }
+}

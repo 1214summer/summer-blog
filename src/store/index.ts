@@ -1,11 +1,15 @@
 import { configureStore } from "@reduxjs/toolkit";
 
 import counterReducer from './modules/counter'
+import modeReducer from './modules/mode'
+import navShowReducer from './modules/navShow'
 import { TypedUseSelectorHook, useSelector, useDispatch, shallowEqual } from "react-redux";
 
 const store = configureStore({
     reducer: {
-        counter: counterReducer
+        counter: counterReducer,
+        mode: modeReducer,
+        navShow: navShowReducer,
     }
 })
 

@@ -21,7 +21,7 @@ export default defineConfig({
     outDir: 'dist',
     sourcemap: true,
     rollupOptions: {
-      input: path.resolve(__dirname, 'public/index.html')
+      input: './index.html'
     }
   },
   resolve: {
