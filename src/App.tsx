@@ -1,6 +1,6 @@
 import { ReactNode, FC } from 'react';
 import styles from './App.module.scss';
-
+import './global.custom.scss';
 import { useLocalStorageState, useMount } from 'ahooks';
 
 import Footer from '@/components/layout/Footer';
@@ -37,7 +37,7 @@ const App: FC<IProps> = () => {
   
 
   return (
-    <div className={classNames(styles.App, bgClass[modeIndex])}>
+    <div className={classNames(styles.AppBox, bgClass[modeIndex])}>
       <Nav />
       <Main />
       <Footer />

@@ -13,4 +13,4 @@ const modeSlice = createSlice({
 })
 
 export const{ changeModeAction } = modeSlice.actions
-export default modeSlice.reducer
+export default modeSlice.reducer;

@@ -34,13 +34,11 @@ import { useLinkList } from './config';
 import style from './index.module.scss'
 
 
-
 interface IProps {
     children?: ReactNode
 }
 
 const bodyStyle = window.document.getElementsByTagName('body')[0].style;
-
 
 const Nav: FC<IProps> = () => {
     //导航栏
@@ -79,8 +77,6 @@ const Nav: FC<IProps> = () => {
       }
     },[modeIndex])
 
-    
-    
     return (
         <>
             <nav className={classNames(style.nav, {[style.hiddenNav]: !navShow })}>
@@ -186,4 +182,4 @@ const Nav: FC<IProps> = () => {
     )
 }
 
-export default memo(Nav)
+export default Nav

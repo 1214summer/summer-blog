@@ -24,16 +24,24 @@ export default defineConfig({
       input: './index.html'
     }
   },
-  resolve: {
-    alias: {
-      '@': path.resolve(__dirname, 'src')
-    }
-  },
   css: {
     preprocessorOptions: {
       scss: {
-        additionalData: `@use "@/styles/sassConfig.scss" as *;`
+        additionalData: `
+        @import "@/styles/base.scss";
+        @import "@/styles/style.scss";
+        ` // 如果有全局变量
       }
+    },
+    modules: {
+      localsConvention: 'camelCase',
+      generateScopedName: '[name]__[local]___[hash:base64:5]'
     }
-  }
+  },
+  resolve: {
+    alias: {
+      '@': path.resolve(__dirname, 'src'),
+      '.scss': '.scss?module'
+    }
+  },
 })

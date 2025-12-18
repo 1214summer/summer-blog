@@ -1,6 +1,3 @@
-@use '@/styles/base.scss' as base;
-@use '@/styles/style.scss' as style;
-
 .baseBtn {
   height: 44px;
   width: 70px;
@@ -11,29 +8,29 @@
   font-weight: 700;
   margin-right: 20px;
   border-radius: 14px;
-  color: base.$textColor;
+  color: $textColor;
   user-select: none;
   @extend .hover;
 }
 
 .hiddenNav {
   box-shadow: none !important;
-  transform: translate(0, -(base.$navHeight));
+  transform: translate(0, -($navHeight));
 }
 
 .nav {
   width: 100%;
-  height: base.$navHeight;
-  background-color: base.$themeColor1;
+  height: $navHeight;
+  background-color: $themeColor1;
   position: fixed;
   top: 0;
   z-index: 10;
-  box-shadow: 0 0 18px base.$footerBg;
+  box-shadow: 0 0 18px $footerBg;
   @extend .trans;
 
   .navContent {
     position: relative;
-    width: base.$centerWidth;
+    width: $centerWidth;
     height: 100%;
     margin: 0 auto;
     display: flex;
@@ -69,7 +66,7 @@
     }
     .navActive {
       @extend .navBtn;
-      background-color: base.$hoverColor;
+      background-color: $hoverColor;
     }
 
     .articlesBtn {
@@ -80,7 +77,7 @@
         position: absolute;
         top: -160px;
         width: 90px;
-        background-color: base.$themeColor1;
+        background-color: $themeColor1;
         border-radius: 14px;
         padding: 10px;
         z-index: 0;
@@ -96,15 +93,15 @@
           margin-bottom: 10px;
           border-radius: 10px;
           user-select: none;
-          background-color: base.$themeColor2;
-          color: base.$textColor;
+          background-color: $themeColor2;
+          color: $textColor;
         }
         .articlesSecondItem:last-child {
           margin-bottom: 0;
         }
         .sedActive {
           @extend .articlesSecondItem;
-          background-color: base.$hoverColor;
+          background-color: $hoverColor;
         }
       }
     }
@@ -123,7 +120,7 @@
         top: -180px;
         transform: translate(-50%, 0);
         width: 80px;
-        background-color: base.$themeColor1;
+        background-color: $themeColor1;
         border-radius: 14px;
         padding: 10px;
         z-index: 0;
@@ -131,7 +128,7 @@
 
         .themeItem {
           height: 40px;
-          background-color: base.$themeColor;
+          background-color: $themeColor;
           margin-bottom: 10px;
           border-radius: 10px;
           display: flex;
@@ -168,7 +165,7 @@
   justify-content: center;
   align-items: center;
   font-size: 22rem;
-  color: base.$textColor;
+  color: $textColor;
   position: fixed;
   top: 0;
   right: 0;
@@ -182,7 +179,7 @@
     justify-content: center;
     align-items: center;
     width: 100%;
-    color: base.$textColor;
+    color: $textColor;
     font-size: 18rem;
     font-family: 'dengxian';
     width: 60rem;
@@ -195,7 +192,7 @@
   }
   .mobileNavActive {
     @extend .mobileNavItem;
-    background-color: base.$hoverColor;
+    background-color: $hoverColor;
   }
   .themeItem {
     @extend .mobileNavItem;

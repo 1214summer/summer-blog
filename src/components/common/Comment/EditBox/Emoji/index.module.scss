@@ -1,0 +1,40 @@
+@use '@/styles/base.scss' as base;
+@use '@/styles/style.scss' as style;
+
+.emoji2 {
+  left: 46px;
+}
+.emoji3 {
+  left: 92px;
+}
+.emoji4 {
+  left: 138px;
+}
+
+.emojiBtn {
+  position: absolute;
+  width: 36px;
+  height: 36px;
+  bottom: 0;
+  border-radius: base.$midRadius;
+  user-select: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: none;
+  font-size: 18px;
+  background-color: base.$themeColor1;
+  @extend .hover;
+}
+
+.emojiContent {
+  width: 368px;
+  word-break: break-all;
+  font-size: 20px;
+}
+
+@media screen and (max-width: 1240px) {
+  .emojiBtn {
+    display: none;
+  }
+}

@@ -5,7 +5,7 @@
       "lib": ["ES2020", "DOM", "DOM.Iterable"],
       "module": "ESNext",
       "skipLibCheck": true,
-      "moduleResolution": "bundler",         // 或 "node16"/"nodeNext"
+      "moduleResolution": "bundler",
       "allowSyntheticDefaultImports": true, // 与 esModuleInterop 配合更稳
       "esModuleInterop": true,              // 允许默认导入 CommonJS 模块
       "resolveJsonModule": true,

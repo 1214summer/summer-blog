@@ -1,0 +1,11 @@
+@use '@/styles/base.scss' as base;
+
+.ant-popover-arrow {
+  display: none;
+}
+
+.ant-popover-inner {
+  border-radius: 16px;
+  overflow: hidden;
+  background-color: base.$themeColor1;
+}
