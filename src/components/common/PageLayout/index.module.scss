@@ -11,13 +11,15 @@
 }
 
 .postTitle {
+  align-items: flex-start;
   user-select: text;
-    .articleClass {
-      @extend .articleInfo;
-    }
-    .articleDate {
-      @extend .articleInfo;
-    }
+
+  .articleClass {
+    @extend .articleInfo;
+  }
+  .articleDate {
+    @extend .articleInfo;
+  }
 }
 
 .layoutCard {
@@ -30,7 +32,7 @@
   word-break: break-all;
 }
 
-@media screen and (max-width: 1240px) {
+@media (max-width: 1240px) {
   .articleInfo {
     font-size: 16rem;
     padding: 0 8rem;

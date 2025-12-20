@@ -72,7 +72,7 @@ img {
   font-size: 18px !important;
 }
 
-@media screen and (max-width: 1240px) {
+@media (max-width: 1240px) {
   body::-webkit-scrollbar,
   div::-webkit-scrollbar {
     display: none;

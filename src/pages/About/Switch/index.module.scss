@@ -55,7 +55,7 @@ $switchWidth: 36px;
   }
 }
 
-@media screen and (max-width: 1240px) {
+@media (max-width: 1240px) {
   .switch {
     height: 24rem;
     margin-bottom: 20rem;

@@ -1,6 +1,8 @@
 import { defineConfig } from 'vite'
 import react from '@vitejs/plugin-react'
 import path from 'path'
+import postcssPxtorem from 'postcss-pxtorem';
+import autoprefixer from 'autoprefixer'
 
 export default defineConfig({
   plugins: [react()],
@@ -27,16 +29,13 @@ export default defineConfig({
   css: {
     preprocessorOptions: {
       scss: {
-        additionalData: `
-        @import "@/styles/base.scss";
-        @import "@/styles/style.scss";
-        ` // 如果有全局变量
+        additionalData: `@import "@/styles/base.scss"; @import "@/styles/style.scss";`
       }
     },
     modules: {
-      localsConvention: 'camelCase',
-      generateScopedName: '[name]__[local]___[hash:base64:5]'
-    }
+      generateScopedName: '[local]_[hash:base64:5]',
+      localsConvention: 'camelCaseOnly'
+    },
   },
   resolve: {
     alias: {

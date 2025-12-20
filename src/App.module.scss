@@ -6,29 +6,20 @@
   font-style: normal;
 }
 
-.AppBox {
+.app {
   font-family: 'dengxian';
   background-position: center 0;
   background-size: cover;
   background-repeat: no-repeat;
   background-attachment: fixed;
-  width: 100%;
-  aspect-ratio: 16/9; 
+  object-fit: contain
 }
-
 .bg0 {
-  background-image: url(./assets/imgs/bg0.webp);
+  background-image: url(./assets/imgs/bg0.png);
 }
 .bg1 {
-  background-image: url(./assets/imgs/bg1.webp);
+  background-image: url(./assets/imgs/bg1.png);
 }
 .bg2 {
-  background-image: url(./assets/imgs/bg2.webp);
+  background-image: url(./assets/imgs/bg2.png);
 }
-
-// /* 响应式调整 */
-// @media (max-width: 768px) {
-//   .AppBox {
-//     aspect-ratio: 4/3; /* 移动端使用不同比例 */
-//   }
-// }

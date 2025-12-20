@@ -1,35 +1,36 @@
 .box {
-    color: $textColor;
-    height: $topTitleHeight;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    user-select: none;
-    width: $layoutWidth;
-    margin: 0 auto;
+  color: $textColor;
+  height: $topTitleHeight;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  user-select: none;
+  width: $layoutWidth;
+  margin: 0 auto;
+
+  .title {
+    font-size: 56px;
+    font-weight: 700;
+    text-shadow: 4px 4px 10px $footerBg;
+  }
+
+  .desc {
+    font-size: 28px;
+  }
+}
+
+@media (max-width: 1240px) {
+  .box {
+    width: 100vw;
 
     .title {
-        font-size: 56px;
-        font-weight: 700;
-        text-shadow: 4px 4px 10px $footerBg;
+      font-size: 40rem;
+      text-shadow: 4rem 4rem 10rem $footerBg;
     }
 
     .desc {
-        font-size: 28px;
+      font-size: 22rem;
     }
-}
-
-@media screen and (max-width: 1240px){
-    .box {
-        width: 100vm;
-        .title {
-        font-size: 40rem;
-        text-shadow: 4rem 4rem 10rem $footerBg;
-        }
-    
-        .desc {
-        font-size: 22rem;
-        }
-    }
+  }
 }

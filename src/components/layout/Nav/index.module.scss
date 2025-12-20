@@ -15,7 +15,7 @@
 
 .hiddenNav {
   box-shadow: none !important;
-  transform: translate(0, -($navHeight));
+  transform: translate(0, -$navHeight);
 }
 
 .nav {
@@ -109,12 +109,12 @@
       top: 60px;
     }
 
-    .themeBtn {
+    .modeBtn {
       @extend .homeAndAdmin;
       right: 80px;
       margin-right: 0;
 
-      .themeOpions {
+      .modeOpions {
         position: absolute;
         left: 50%;
         top: -180px;
@@ -126,7 +126,7 @@
         z-index: 0;
         @extend .trans;
 
-        .themeItem {
+        .modeItem {
           height: 40px;
           background-color: $themeColor;
           margin-bottom: 10px;
@@ -138,20 +138,21 @@
           @extend .trans;
           color: #fff;
         }
-        .themeItem1,
-        .themeItem2 {
+        .modeItem1,
+        .modeItem2 {
           color: #000;
         }
-        .themeItem:last-child {
+
+        .modeItem:last-child {
           margin-bottom: 0;
         }
-        .themeItem:hover {
+        .modeItem:hover {
           transform: scale(1.07);
           box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.4);
         }
       }
     }
-    .themeBtn:hover .themeOpions {
+    .modeBtn:hover .modeOpions {
       top: 60px;
     }
   }
@@ -194,13 +195,13 @@
     @extend .mobileNavItem;
     background-color: $hoverColor;
   }
-  .themeItem {
+  .modeItem {
     @extend .mobileNavItem;
     border: 2rem solid #ccc;
   }
 }
 
-@media screen and (max-width: 1240px) {
+@media (max-width: 1240px) {
   .nav {
     display: none;
   }

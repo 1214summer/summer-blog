@@ -1,14 +1,11 @@
-@use '@/styles/base.scss' as base;
-@use '@/styles/style.scss' as style;
-
 .preShow {
   position: relative;
   height: 260px;
   border-radius: 20px;
   padding: 20px 50px;
   // box-shadow: 0 0 18px #000 inset;
-  background-color: base.$themeColor1;
-  margin-top: base.$space;
+  background-color: $themeColor1;
+  margin-top: $space;
   @extend .trans;
 
   .closeBtn {
@@ -23,7 +20,7 @@
     user-select: none;
     border-radius: 50%;
     cursor: pointer;
-    background-color: base.$themeColor2;
+    background-color: $themeColor2;
     @extend .hover;
   }
 
@@ -41,15 +38,15 @@
     background-color: rgba(0, 0, 0, 0);
   }
   .preMarked::-webkit-scrollbar-thumb {
-    background-color: base.$themeColor2;
+    background-color: $themeColor2;
     border-radius: 4px;
   }
   .preMarked::-webkit-scrollbar-thumb:hover {
-    background-color: base.$hoverColor;
+    background-color: $hoverColor;
   }
 }
 
-@media screen and (max-width: 1240px) {
+@media (max-width: 1240px) {
   .preShow {
     height: 140rem;
     border-radius: 8rem;

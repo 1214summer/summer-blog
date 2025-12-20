@@ -1,5 +1,5 @@
 import { ReactNode, FC } from 'react';
-import styles from './App.module.scss';
+import style from './App.module.scss';
 import './global.custom.scss';
 import { useLocalStorageState, useMount } from 'ahooks';
 
@@ -11,6 +11,7 @@ import BackToTop from '@/components/layout/BackToTop';
 import classNames from 'classnames';
 import { useAppSelector, useAppDispatch, shallowEqualApp } from '@/store';
 import {changeModeAction} from "@/store/modules/mode"
+import Loading from './components/layout/Loading';
 interface IProps {
   children?: ReactNode;
 }
@@ -25,7 +26,7 @@ const App: FC<IProps> = () => {
   )
   const dispatch = useAppDispatch();
   
-  const bgClass = [styles.bg0, styles.bg1, styles.bg2];
+  const bgClass = [style.bg0, style.bg1, style.bg2];
   const [localMode] = useLocalStorageState('localMode');
 
   // 组件挂载时，如果有本地存储的 mode，则设置到 Redux
@@ -37,7 +38,8 @@ const App: FC<IProps> = () => {
   
 
   return (
-    <div className={classNames(styles.AppBox, bgClass[modeIndex])}>
+    <div className={classNames(style.app, bgClass[modeIndex])}>
+      <Loading  duration={1500} onComplete={() => console.log('Loading completed')} />
       <Nav />
       <Main />
       <Footer />
